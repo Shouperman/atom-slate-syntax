@@ -1,0 +1,18 @@
+{
+  "name": "slate-syntax",
+  "theme": "syntax",
+  "version": "0.0.1",
+  "description": "A dark theme with pastel colors to avoid eye strain.",
+  "keywords": [
+    "syntax",
+    "theme",
+    "dark",
+    "blue-ish",
+    "pastel",
+  ],
+  "repository": "https://github.com/atom/slate-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

@@ -10,7 +10,7 @@
     "blue-ish",
     "pastel"
   ],
-  "repository": "https://github.com/atom/slate-syntax",
+  "repository": "https://github.com/Shouperman/atom-slate-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

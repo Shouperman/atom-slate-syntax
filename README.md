@@ -1,6 +1,6 @@
-# slate-syntax theme
+# Slate Syntax
 
-A dark theme with less intense pastel colors to avoid eye strain.
+A dark theme with less intense pastel colors.
 
 **PHP**
 
@@ -13,3 +13,7 @@ A dark theme with less intense pastel colors to avoid eye strain.
 **HTML**
 
 ![HTML Screenshot](https://github.com/Shouperman/atom-slate-syntax/raw/master/images/html.png)
+
+
+### License
+MIT

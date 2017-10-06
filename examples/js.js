@@ -1,4 +1,7 @@
-// JS example adapted from module docs at https://docs.angularjs.org/guide/module
+/**
+ * JS example adapted from module docs
+ * @see https://docs.angularjs.org/guide/module
+ */
 
 angular.module('myModule', []).
   value('a', 123).
@@ -35,9 +38,7 @@ angular.module('myModule', []).
       content: [1,2,3],
     };
 
-    angular.forEach(useless.content, function(v,i) {
-      console.log(v);
-    });
+    angular.forEach(useless.content, (v,i) => console.log(v));
 
     return function(name) {
       alert(salutation + ' ' + name + '!');

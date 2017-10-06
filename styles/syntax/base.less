@@ -1,68 +1,10 @@
-@import "syntax-variables";
 
-atom-text-editor {
-  background-color: @syntax-background-color;
-  color: @syntax-text-color;
-
-  .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
-  }
-
-  .indent-guide {
-    color: @syntax-indent-guide-color;
-  }
-
-  .invisible-character {
-    color: @syntax-invisible-character-color;
-  }
-
-  .gutter {
-    background-color: @syntax-gutter-background-color;
-    color: @syntax-gutter-text-color;
-
-    .line-number {
-      &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
-      }
-
-      &.cursor-line-no-selection {
-        color: @syntax-gutter-text-color-selected;
-      }
-    }
-  }
-
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @light-gray;
-  }
-
-  .invisible {
-    color: @syntax-text-color;
-  }
-
-  .cursor {
-    color: @syntax-cursor-color;
-  }
-
-  .selection .region {
-    background-color: @syntax-selection-color;
-  }
-}
-
-atom-text-editor .search-results .syntax--marker .region {
-  background-color: transparent;
-  border: 1px solid @syntax-result-marker-color;
-}
-
-atom-text-editor .search-results .syntax--marker.current-result .region {
-  border: 1px solid @syntax-result-marker-color-selected;
-}
+// Base Syntax Styles
 
 .syntax--comment {
   color: @light-gray;
 }
+
 
 .syntax--keyword {
   color: @red;
@@ -84,6 +26,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+
 .syntax--storage {
   color: @red;
 
@@ -91,6 +34,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @purple;
   }
 }
+
 
 .syntax--constant {
   color: @hard-cyan;
@@ -116,6 +60,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+
 .syntax--variable {
   color: @blue;
 
@@ -132,10 +77,12 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+
 .syntax--invalid.syntax--illegal {
   background-color: @hard-red;
   color: @syntax-background-color;
 }
+
 
 .syntax--string {
   &.syntax--quoted.syntax--single {
@@ -146,19 +93,15 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @green;
   }
 
-
   &.syntax--regexp {
     color: @orange;
-
-    .syntax--source.syntax--ruby.syntax--embedded {
-      color: @red;
-    }
   }
 
-  &.syntax--other.syntax--link {
+  &.syntax--other {
     color: @hard-cyan;
   }
 }
+
 
 .syntax--punctuation {
   &.syntax--definition {
@@ -221,9 +164,15 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
       color: @cyan;
     }
   }
+
+  &.syntax--other.syntax--namespace {
+    color: darken(@syntax-text-color, 20%);
+  }
 }
 
 .syntax--entity {
+  // color: @green;
+
   &.syntax--name {
     color: @syntax-text-color;
   }
@@ -231,21 +180,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--name.syntax--function {
     color: @hard-cyan;
   }
-  // &.syntax--name.syntax--type {
-  //   color: @blue;
-  // }
-
-  &.syntax--other.syntax--inherited-class {
-    color: @syntax-text-color;
-  }
-
-  // &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
-  //   color: @blue;
-  // }
-
-  // &.syntax--name.syntax--section {
-  //   color: @blue;
-  // }
 
   &.syntax--name.syntax--tag {
     color: @blue;
@@ -254,20 +188,26 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--attribute-name {
     color: @red;
   }
-}
 
-.syntax--meta {
-  &.syntax--class {
-    color: @cyan;
-  }
-
-  &.syntax--function-call {
+  &.syntax--other.syntax--alias {
     color: @syntax-text-color;
   }
+}
 
-  // &.syntax--link {
-  //   color: @orange;
+
+.syntax--meta {
+  // &.syntax--class {  // Applys to all symbols within a class.
+  //   color: @syntax-text-color;
   // }
+
+  &.syntax--function-call,
+  &.syntax--method-call {
+    // color: @syntax-text-color;  // Less specific than entities within; redefine sub classes to target.
+  }
+
+  &.syntax--link {
+    color: @hard-cyan;;
+  }
 
   &.syntax--require {
     color: @blue;
@@ -283,13 +223,14 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--use {
-    color: @syntax-text-color;
+    color: darken(@syntax-text-color, 20%);
   }
 }
 
 .syntax--none {
   color: @syntax-text-color;
 }
+
 
 .syntax--markup {
   &.syntax--bold {
@@ -331,6 +272,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+
 .syntax--source {
   &.syntax--gfm .syntax--markup {
     -webkit-font-smoothing: auto;
@@ -338,9 +280,4 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
       color: @green;
     }
   }
-}
-
-
-atom-text-editor[mini] .scroll-view {
-  padding-left: 1px;
 }

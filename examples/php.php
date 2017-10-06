@@ -2,9 +2,13 @@
 
 use Some\Other\Example;
 use App\Helper;
+use App\SomeTrait as Something;
+use App\MyInterface;
 
-class PHP_Example extends Example
+class PHP_Example extends Example implements MyInterface
 {
+    use Something;
+
     /**
      * Block Comment
      *
